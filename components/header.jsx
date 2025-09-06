@@ -1,14 +1,14 @@
 import React from 'react'
-import { SignedOut, SignedIn, SignInButton, SignUpButton, UserButton } from '@clerk/nextjs'
-import { LayoutDashboard, Link, PenBoxIcon, PenLineIcon } from 'lucide-react'
+import { SignedOut, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
+import { LayoutDashboard, PenBoxIcon } from 'lucide-react'
 import { Button } from './ui/button'
-const header = () => {
+
+const Header = () => {
   return (
     <div className='fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b'>
-
-      <nav className='container mx-auto px-4 flex items-centre justify-between'>
-
-        {/* logo */}
+      <nav className='container mx-auto px-4 flex items-center justify-between'>
+        
+        {/* Logo */}
         <a href='/'>
           <img
             src="logo.png"
@@ -18,8 +18,9 @@ const header = () => {
             className="h-20 w-auto object-contain"
           />
         </a>
-        {/* buttons for nav bar */}
-        <div className='flex  items-center space-x-2.5'>
+
+        {/* Buttons */}
+        <div className='flex items-center space-x-2.5'>
           <SignedOut>
             <SignInButton forceRedirectUrl='/dashboard'>
               <Button variant="outline" className="mt-6">
@@ -27,10 +28,9 @@ const header = () => {
               </Button>
             </SignInButton>
           </SignedOut>
-          <SignedIn>
-            {/* button after signed up  */}
 
-            {/* for dashboard */}
+          <SignedIn>
+            {/* Dashboard */}
             <a
               href={"/dashboard"}
               className='text-gray-600 hover:text-blue-600 flex items-center gap-2'>
@@ -40,7 +40,7 @@ const header = () => {
               </Button>
             </a>
 
-            {/* for dashboard */}
+            {/* Add Transaction */}
             <a
               href={"/transaction/create"}
               className='flex items-center gap-2'>
@@ -50,6 +50,8 @@ const header = () => {
               </Button>
             </a>
           </SignedIn>
+
+          {/* User Avatar */}
           <SignedIn>
             <UserButton
               appearance={{
@@ -61,12 +63,10 @@ const header = () => {
               }}
             />
           </SignedIn>
-
-
         </div>
       </nav>
     </div>
   )
 }
 
-export default header
+export default Header
