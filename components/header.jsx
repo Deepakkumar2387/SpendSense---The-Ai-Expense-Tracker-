@@ -2,8 +2,10 @@ import React from 'react'
 import { SignedOut, SignedIn, SignInButton, UserButton } from '@clerk/nextjs'
 import { LayoutDashboard, PenBoxIcon } from 'lucide-react'
 import { Button } from './ui/button'
+import { checkUser } from '@/lib/checkUser'
 
-const Header = () => {
+const Header = async() => {
+  await checkUser()
   return (
     <div className='fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b'>
       <nav className='container mx-auto px-4 flex items-center justify-between'>
