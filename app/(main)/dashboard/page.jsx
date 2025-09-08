@@ -1,12 +1,26 @@
 import React from 'react';
-
-const Dashboard = () => {
+import CreateAccountDrawer from '@/components/create-account-drawer';
+const DashboardPage = () => {
   return (
-    <div>
-      Dashboard
+    <div className= 'px-5'>
+      {/* Budeget Progress */}
+
+
+    {/* Overview */}
+
+
+
+    {/* account grid */}
+
+ <div>
+ 
+  <CreateAccountDrawer/>
+ </div>
+
+
     </div>
   )
 }
 
-export default Dashboard
+export default DashboardPage
 
