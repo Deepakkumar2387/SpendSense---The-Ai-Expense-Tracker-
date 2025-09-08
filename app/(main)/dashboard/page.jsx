@@ -13,8 +13,8 @@ const DashboardPage = () => {
     {/* account grid */}
 
  <div>
+ <CreateAccountDrawer>open</CreateAccountDrawer>
  
-  <CreateAccountDrawer/>
  </div>
 
 
