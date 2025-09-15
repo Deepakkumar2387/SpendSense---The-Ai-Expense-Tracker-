@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Drawer,
   DrawerTrigger,
@@ -21,6 +21,10 @@ import {
 } from "./ui/select";
 import { Switch } from "./ui/switch";
 import { Button } from "./ui/button";
+import { createAccount } from "@/app/actions/dashboard";
+import useFetch from "@/hooks/use-fetch";
+import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 const CreateAccountDrawer = ({ children }) => {
   const [open, setOpen] = React.useState(false);
 
@@ -41,9 +45,29 @@ const CreateAccountDrawer = ({ children }) => {
     },
   });
 
-  const onSubmit = async(data) => {
-    console.log(data);
+  const {
+    data: newAccount,
+    error,
+    fn: createAccountfn,
+    loading: createAccountLoading,
+  } = useFetch(createAccount);
+
+  const onSubmit = async (data) => {
+    await createAccountfn(data);
   };
+  useEffect(() => {
+    if (newAccount && !createAccountLoading) {
+      toast.success("Account created successfully");
+      reset();
+      setOpen(false);
+    }
+  }, [createAccountLoading, newAccount]);
+
+  useEffect(() => {
+    if (error) {
+      toast.error(error?.message);
+    }
+  }, [error]);
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
@@ -56,13 +80,13 @@ const CreateAccountDrawer = ({ children }) => {
           <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
             {/* Name Input */}
 
-            <div className="sapce-y-2">
+            <div className="space-y-2">
               <label htmlFor="name" className="text-sm font-medium">
                 Account Name
               </label>
               <Input
                 id="name"
-                plaeholder="e.g. , Main Checking "
+                placeholder="e.g. , Main Checking "
                 {...register("name")}
               />
               {errors.name && (
@@ -72,9 +96,9 @@ const CreateAccountDrawer = ({ children }) => {
               )}
             </div>
 
-            {/* slect account */}
+            {/* select account */}
 
-            <div className="sapce-y-2">
+            <div className="space-y-2">
               <label htmlFor="type" className="text-sm font-medium">
                 Account Type
               </label>
@@ -100,7 +124,7 @@ const CreateAccountDrawer = ({ children }) => {
 
             {/* Balance Input */}
 
-            <div className="sapce-y-2">
+            <div className="space-y-2">
               <label htmlFor="balance" className="text-sm font-medium">
                 Account balance
               </label>
@@ -108,7 +132,7 @@ const CreateAccountDrawer = ({ children }) => {
                 id="balance"
                 type="number"
                 step="0.01"
-                plaeholder="0.00 "
+                placeholder="0.00 "
                 {...register("balance")}
               />
               {errors.balance && (
@@ -120,10 +144,10 @@ const CreateAccountDrawer = ({ children }) => {
 
             {/* Default value */}
 
-            <div className="sapce-y-2 flex items-center justify-between  rounded-lg p-3">
+            <div className="space-y-2 flex items-center justify-between  rounded-lg p-3">
               <div>
                 <label
-                  htmlFor="balance"
+                  htmlFor="isDefault"
                   className="text-sm font-medium cursor-pointer"
                 >
                   Set as Default Account
@@ -145,15 +169,26 @@ const CreateAccountDrawer = ({ children }) => {
             </div>
 
             {/* button to handele create account and on submit */}
-            <div className="flex gap-2 pt-4">
+            <div className="flex gap-2 pt-4 ">
               <DrawerClose asChild>
                 <Button type="button" variant="outline" className="flex-1">
                   Cancel
                 </Button>
               </DrawerClose>
 
-              <Button type="submit" className="flex-1">
-                Create Account
+              <Button
+                type="submit"
+                className="flex-1"
+                disabled={createAccountLoading}
+              >
+                {createAccountLoading ? (
+                  <>
+                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                    Creating...
+                  </>
+                ) : (
+                  <>Create Account</>
+                )}
               </Button>
             </div>
           </form>
