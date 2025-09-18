@@ -13,7 +13,7 @@ const Header = async() => {
         {/* Logo */}
         <a href='/'>
           <img
-            src="logo.png"
+            src="/logo.png"
             alt="SpendSense logo"
             height={120}
             width={320}

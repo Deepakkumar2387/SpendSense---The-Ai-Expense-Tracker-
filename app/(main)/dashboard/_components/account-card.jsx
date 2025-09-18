@@ -21,7 +21,7 @@ const handleDefaultChange = async(event) => {
 event.preventDefault();
 
 if(isDefault){
-  toast.warning("You need to atleaast one default account") ;
+  toast.warning("You need to atleast one default account") ;
   return ;
 }
 await updateDefaultFn(id) ;
