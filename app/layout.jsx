@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <footer className="bg-blue-50 py-12">
           <div className="container mx-auto px-4 text-centre text-gray-600">
             <p className="text-center">
-              Wealth © 2025. All rights reserved.
+              SpendSense © 2025. All rights reserved.
               by Deepak Kumar 
             </p>
           </div>
