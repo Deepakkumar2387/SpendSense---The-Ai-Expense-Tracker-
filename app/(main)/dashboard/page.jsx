@@ -1,18 +1,33 @@
+
 // "use client";
 import React from "react";
 import CreateAccountDrawer from "@/components/create-account-drawer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Plus } from "lucide-react";
 import AccountCard from "./_components/account-card";
-import {  getUserAccounts } from "@/app/actions/dashboard";
+import { getUserAccounts } from "@/app/actions/dashboard";
+import BudgetProgress from "./_components/budget-progress";
+import { getCurrentBudget } from "@/app/actions/budget";
 
 async function DashboardPage() {
   const accounts = await getUserAccounts();
+  const defaultAccount = accounts?.find((account) => account.isDefault);
+
+  // Get budget for default account
+  let budgetData = null;
+
+  if (defaultAccount) {
+    budgetData = await getCurrentBudget(defaultAccount.id);
+  }
+
 
   return (
     <div className="px-5">
       {/* Budget Progress */}
-
+      {defaultAccount && (<BudgetProgress
+        initialBudget={budgetData?.budget}
+        currentExpenses={budgetData?.currentExpenses || 0}
+      />)}
       {/* Overview */}
 
       {/* account grid */}
