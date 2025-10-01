@@ -366,7 +366,7 @@ const TransactionTable = ({ transactions }) => {
                                     </TableCell>
                                     <TableCell>
                                         <DropdownMenu>
-                                            <DropdownMenuTrigger>
+                                            <DropdownMenuTrigger asChild>
                                                 <Button
                                                     variant="ghost"
                                                     className="h-8 w-8 p-0"
@@ -378,7 +378,7 @@ const TransactionTable = ({ transactions }) => {
                                                 <DropdownMenuItem
                                                     onClick={() =>
                                                         router.push(
-                                                            `/transactions/create?edit=${t.id}`
+                                                            `/transaction/create?edit=${t.id}`
                                                         )
                                                     }
                                                 >
