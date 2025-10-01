@@ -38,7 +38,7 @@ Track expenses, manage accounts, and gain AI-driven insights — all in one plac
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/spendsense.git
+git clone https://github.com/Deepakkumar2387/SpendSense---The-Ai-Expense-Tracker-.git
 cd spendsense
 
 # Install dependencies
