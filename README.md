@@ -46,55 +46,14 @@ npm install
 # or
 yarn install
 
+Create a .env file in the root directory:
 
-## ✨ Features  
+NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
+CLERK_API_KEY=<your-clerk-backend-api>
+ARCJET_KEY=<your-arcjet-key>
+DATABASE_URL=<your-database-url>
 
-- 🤖 **AI-Powered Insights** – Predict spending patterns & auto-categorize expenses.  
-- 🔐 **Secure Authentication** – Powered by **Clerk** for user login & registration.  
-- 💳 **Expense Tracking** – Add, edit, and view transactions across multiple accounts.  
-- 🏦 **Account Management** – Create and manage multiple accounts.  
-- 📊 **Real-Time Reports** – Visual summaries with charts and graphs.  
-- 🛡 **Bot Protection** – **ArcJet** guards against malicious bots.  
-- 📱 **Responsive Design** – Works seamlessly on desktop & mobile.  
-- 📧 **Email Notifications** – Powered by **Resend** for reports & alerts.  
-
----
-
-## 🛠 Tech Stack  
-
-| Layer        | Tools / Libraries |
-|--------------|------------------|
-| **Frontend** | React 19, Next.js 15.5.2, Tailwind CSS |
-| **Backend / DB** | Prisma, PostgreSQL |
-| **Authentication** | Clerk |
-| **Bot Protection** | ArcJet |
-| **Charts & UI** | Recharts, Radix UI, Lucide React |
-| **Emails** | React Email, Resend |
-
----
-
-## 🚀 Getting Started  
-
-### ✅ Prerequisites
-- Node.js **>= 20**  
-- npm or yarn  
-- Vercel account (optional, for deployment)  
-- ArcJet API key  
-- Clerk API keys  
-
-### ⚡ Installation  
-
-```bash
-# Clone the repository
-git clone (https://github.com/Deepakkumar2387/SpendSense---The-Ai-Expense-Tracker-.git)
-cd spendsense
-
-# Install dependencies
-npm install
-# or
-yarn install
-
-▶ Run the Dev Server
+</details> <details> <summary><b>▶ Run the Dev Server</b></summary>
 npm run dev
 # or
 yarn dev
@@ -102,12 +61,14 @@ yarn dev
 
 Now open 👉 http://localhost:3000
 
+</details>
+
 📂 Project Structure
 SpendSense/
 │
 ├─ app/                # Next.js App directory
 │   ├─ (main)/         # Main pages
-│   ├─ middleware.js   # ArcJet + Clerk middleware
+│   ├─ middleware.ts   # ArcJet + Clerk middleware
 │   └─ _components/    # Reusable components
 │
 ├─ lib/                # Helper functions
@@ -116,3 +77,37 @@ SpendSense/
 ├─ components/         # React components
 ├─ package.json
 └─ README.md
+
+📖 Usage
+
+🔑 Login / Register with Clerk
+
+💳 Add accounts & transactions
+
+📊 View AI-powered insights & reports
+
+📧 Receive alerts via email
+
+🚀 Deployment
+
+Push your project to GitHub
+
+Import into Vercel
+
+Set environment variables in Vercel dashboard
+
+Hit Deploy! 🎉
+
+🤝 Contributing
+
+🍴 Fork the repository
+
+🌿 Create your branch
+
+💾 Commit changes
+
+🚀 Push & Open PR
+
+🏷 About
+
+SpendSense – For anyone who wants to manage money smartly with AI.
