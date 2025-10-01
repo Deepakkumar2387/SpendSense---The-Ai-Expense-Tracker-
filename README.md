@@ -1,36 +1,135 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+SpendSense – AI Expense Tracker
 
-## Getting Started
+SpendSense is an intelligent personal finance management web app that helps users track expenses, manage accounts, and gain insights using AI. It combines Next.js, React, Clerk for authentication, and ArcJet for bot protection to provide a smooth, secure, and user-friendly experience.
 
-First, run the development server:
+Features
 
-```bash
+AI-Powered Insights – Predict spending patterns and categorize expenses automatically.
+
+Secure Authentication – Powered by Clerk for user login and registration.
+
+Expense Tracking – Add, edit, and view transactions across multiple accounts.
+
+Account Management – Create and manage multiple accounts.
+
+Real-Time Reports – Get visual summaries with charts and graphs.
+
+Bot Protection – ArcJet protects against malicious bots.
+
+Responsive Design – Works seamlessly on desktop and mobile devices.
+
+Email Notifications – Powered by Resend for sending reports and alerts.
+
+Tech Stack
+
+Frontend: React 19, Next.js 15.5.2, Tailwind CSS
+
+Backend / Database: Prisma, PostgreSQL (or your choice)
+
+Authentication: Clerk
+
+Bot Protection: ArcJet
+
+Charts & UI Components: Recharts, Radix UI, Lucide React
+
+Email: React Email, Resend
+
+Getting Started
+Prerequisites
+
+Node.js >= 20
+
+npm or yarn
+
+Vercel account for deployment (optional)
+
+ArcJet API key
+
+Clerk API keys
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/<your-username>/spendsense.git
+cd spendsense
+
+
+Install dependencies:
+
+npm install
+# or
+yarn install
+
+
+Environment variables:
+
+Create a .env file in the root and add:
+
+NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
+CLERK_API_KEY=<your-clerk-backend-api>
+ARCJET_KEY=<your-arcjet-key>
+DATABASE_URL=<your-database-url>
+
+
+Run the development server:
+
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Open http://localhost:3000
+ in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Project Structure
+SpendSense/
+│
+├─ app/                # Next.js App directory
+│   ├─ (main)/         # Main pages
+│   ├─ middleware.js   # ArcJet + Clerk middleware
+│   └─ _components/    # Reusable components
+│
+├─ lib/                # Helper functions
+├─ prisma/             # Prisma schema & migrations
+├─ public/             # Static assets
+├─ components/         # React components
+├─ package.json
+└─ README.md
 
-## Learn More
+Usage
 
-To learn more about Next.js, take a look at the following resources:
+Register/login using Clerk authentication.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add accounts and transactions.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+View reports and summaries.
 
-## Deploy on Vercel
+AI categorization automatically organizes your expenses.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Receive email notifications and alerts.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Deployment
+
+Deploy on Vercel:
+
+Push your project to GitHub.
+
+Go to Vercel
+ → Import project → Connect GitHub repo.
+
+Set environment variables in Vercel dashboard.
+
+Deploy!
+
+Contributing
+
+Fork the repository.
+
+Create your feature branch: git checkout -b feature-name
+
+Commit your changes: git commit -m "Add some feature"
+
+Push to branch: git push origin feature-name
+
+Open a Pull Request.
