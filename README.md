@@ -3,31 +3,6 @@
 > An intelligent **personal finance management** web app powered by **Next.js, React, Clerk, and ArcJet**.  
 Track expenses, manage accounts, and gain AI-driven insights — all in one place.  
 
----
-
-<!-- PROJECT LOGO -->
-<p align="center">
-  <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/452/external-finance-fintech-flaticons-lineal-color-flat-icons.png" width="100" alt="SpendSense Logo"/>
-</p>
-
-<h1 align="center">💸 SpendSense – AI Expense Tracker</h1>
-
-<p align="center">
-  An intelligent personal finance manager built with <b>Next.js</b>, <b>React</b>, <b>Clerk</b>, and <b>ArcJet</b>.  
-  <br/>
-  Track expenses, manage accounts, and gain AI-powered insights securely.
-</p>
-
-<p align="center">
-  <a href="https://vercel.com/"><img src="https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel" /></a>
-  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-15.5.2-black?style=for-the-badge&logo=next.js" /></a>
-  <a href="https://clerk.com/"><img src="https://img.shields.io/badge/Auth-Clerk-purple?style=for-the-badge&logo=clerk" /></a>
-  <a href="https://arcjet.com/"><img src="https://img.shields.io/badge/Security-ArcJet-blue?style=for-the-badge&logo=shield" /></a>
-  <a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/Database-PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" /></a>
-</p>
-
----
-
 ## ✨ Features  
 
 - 🤖 **AI-Powered Insights** – Predict spending patterns & auto-categorize expenses  
