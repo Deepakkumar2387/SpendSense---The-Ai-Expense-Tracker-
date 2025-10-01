@@ -20,13 +20,21 @@ Track expenses, manage accounts, and gain AI-driven insights — all in one plac
 
 <p align="center">
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" />
+  
   <img src="https://img.shields.io/badge/Next.js-15.5-black?logo=next.js" />
+  
   <img src="https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?logo=tailwindcss&logoColor=white" />
+  
   <img src="https://img.shields.io/badge/Clerk-Auth-purple?logo=clerk" />
+  
   <img src="https://img.shields.io/badge/ArcJet-Security-blue?logo=shield" />
+  
   <img src="https://img.shields.io/badge/PostgreSQL-DB-316192?logo=postgresql" />
+  
   <img src="https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma" />
+  
   <img src="https://img.shields.io/badge/Recharts-Graphs-orange" />
+  
 </p>
 
 ---
