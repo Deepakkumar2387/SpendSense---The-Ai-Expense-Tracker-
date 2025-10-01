@@ -1,4 +1,4 @@
-# 💸 ProjectSpendSense – AI Expense Tracker  
+# 💸 SpendSense – AI Expense Tracker  
 
 > An intelligent **personal finance management** web app powered by **Next.js, React, Clerk, and ArcJet**.  
 Track expenses, manage accounts, and gain AI-driven insights — all in one place.  
