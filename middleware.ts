@@ -1,41 +1,47 @@
-import { auth, clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
-import arcjet from "@arcjet/next";
-import { createMiddleware, detectBot, shield } from "@arcjet/next";
+import arcjet, { createMiddleware, detectBot, shield } from "@arcjet/next";
+import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
+import { NextResponse } from "next/server";
 
-// Match routes that need authentication
 const isProtectedRoute = createRouteMatcher([
   "/dashboard(.*)",
   "/account(.*)",
   "/transaction(.*)",
 ]);
 
-// Initialize Arcjet middleware
-const arcjetMiddleware = arcjet({
+// Create Arcjet middleware
+const aj = arcjet({
   key: process.env.ARCJET_KEY,
+  // characteristics: ["userId"], // Track based on Clerk userId
   rules: [
-    shield({ mode: "LIVE" }),
+    // Shield protection for content and security
+    shield({
+      mode: "LIVE",
+    }),
     detectBot({
-      mode: "LIVE", // Use "DRY_RUN" to only log bots
+      mode: "LIVE", // will block requests. Use "DRY_RUN" to log only
       allow: [
         "CATEGORY:SEARCH_ENGINE", // Google, Bing, etc
         "GO_HTTP", // For Inngest
+        // See the full list at https://arcjet.com/bot-list
       ],
     }),
   ],
 });
 
-// Initialize Clerk middleware
-const clerkMW = clerkMiddleware(async (authFn, req) => {
-  const { userId } = await authFn();
+// Create base Clerk middleware
+const clerk = clerkMiddleware(async (auth, req) => {
+  const { userId } = await auth();
 
-  if (isProtectedRoute(req) && !userId) {
-    const { redirectToSignIn } = await authFn();
+  if (!userId && isProtectedRoute(req)) {
+    const { redirectToSignIn } = await auth();
     return redirectToSignIn();
   }
+
+  return NextResponse.next();
 });
 
-// Compose both middlewares
-export default createMiddleware(arcjetMiddleware, clerkMW);
+// Chain middlewares - ArcJet runs first, then Clerk
+export default createMiddleware(aj, clerk);
 
 export const config = {
   matcher: [
