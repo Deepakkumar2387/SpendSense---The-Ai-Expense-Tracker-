@@ -61,7 +61,6 @@ CLERK_API_KEY=<your-clerk-backend-api>
 ARCJET_KEY=<your-arcjet-key>
 DATABASE_URL=<your-database-url>
 
-</details> <details> <summary><b>▶ Run the Dev Server</b></summary>
 npm run dev
 # or
 yarn dev
@@ -69,7 +68,6 @@ yarn dev
 
 Now open 👉 http://localhost:3000
 
-</details>
 
 📂 Project Structure
 SpendSense/
@@ -118,6 +116,17 @@ Hit Deploy! 🎉
 
 
 
+## Deployment
+Deployed on Railway: https://spendsense-the-ai-expense-tracker-production.up.railway.app/
+
+
 🏷 About
 
 SpendSense – For anyone who wants to manage money smartly with AI.
+
+
+![SpendSense Screenshot](assets/1.png)
+
+![SpendSense Screenshot](assets/2.png)
+
+![SpendSense Screenshot](assets/3.png)
