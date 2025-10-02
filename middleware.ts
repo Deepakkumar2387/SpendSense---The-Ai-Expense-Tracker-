@@ -11,7 +11,7 @@ const isProtectedRoute = createRouteMatcher([
 
 // ArcJet middleware for bot detection and security
 const aj = arcjet({
-  key: process.env.ARCJET_KEY,
+  key: process.env.ARCJET_KEY!,
   rules: [
     shield({
       mode: "LIVE",
@@ -26,15 +26,13 @@ const aj = arcjet({
   ],
 });
 
-// Clerk middleware for authentication
+// Clerk middleware for authentication with proper syntax
 const clerk = clerkMiddleware(async (auth, req) => {
-  const { userId, redirectToSignIn } = await auth();
-
-  // If the route is protected and user is not signed in, redirect
-  if (!userId && isProtectedRoute(req)) {
-    return redirectToSignIn();
+  // Protect routes if needed
+  if (isProtectedRoute(req)) {
+    await auth.protect();
   }
-
+  
   return NextResponse.next();
 });
 
@@ -44,14 +42,9 @@ export default createMiddleware(aj, clerk);
 // Middleware matcher
 export const config = {
   matcher: [
-    // Protected pages
-    "/dashboard/:path*",
-    "/account/:path*",
-    "/transaction/:path*",
-    // API routes
-    "/api/:path*",
-    "/trpc/:path*",
-    // Skip Next.js internals and static files
-    "/((?!_next/static|_next/image|favicon.ico).*)",
+    // Skip Next.js internals and all static files
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    // Always run for API routes
+    '/(api|trpc)(.*)',
   ],
 };
