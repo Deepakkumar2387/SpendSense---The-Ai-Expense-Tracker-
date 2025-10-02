@@ -1,36 +1,121 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 💸 SpendSense – AI Expense Tracker  
 
-## Getting Started
+> An intelligent **personal finance management** web app powered by **Next.js, React, Clerk, and ArcJet**.  
+Track expenses, manage accounts, and gain AI-driven insights — all in one place.  
 
-First, run the development server:
+## ✨ Features  
+
+- 🤖 **AI-Powered Insights** – Predict spending patterns & auto-categorize expenses  
+- 🔐 **Clerk Authentication** – Secure login & registration  
+- 💳 **Expense Tracking** – Add, edit, view transactions across accounts  
+- 🏦 **Account Management** – Manage multiple accounts with ease  
+- 📊 **Real-Time Reports** – Charts & visual summaries  
+- 🛡 **ArcJet Bot Protection** – Keep bots & abuse away  
+- 📱 **Responsive UI** – Works on desktop & mobile  
+- 📧 **Email Notifications** – Reports & alerts via **Resend**  
+
+---
+
+## 🛠 Tech Stack  
+
+<p align="center">
+  <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black" />
+  
+  <img src="https://img.shields.io/badge/Next.js-15.5-black?logo=next.js" />
+  
+  <img src="https://img.shields.io/badge/TailwindCSS-3.4-38B2AC?logo=tailwindcss&logoColor=white" />
+  
+  <img src="https://img.shields.io/badge/Clerk-Auth-purple?logo=clerk" />
+  
+  <img src="https://img.shields.io/badge/ArcJet-Security-blue?logo=shield" />
+  
+  <img src="https://img.shields.io/badge/PostgreSQL-DB-316192?logo=postgresql" />
+  
+  <img src="https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma" />
+  
+  <img src="https://img.shields.io/badge/Recharts-Graphs-orange" />
+  
+</p>
+
+---
+
+## 🚀 Getting Started  
+
+<details>
+  <summary><b>📥 Installation</b></summary>
 
 ```bash
+# Clone the repository
+git clone https://github.com/Deepakkumar2387/SpendSense---The-Ai-Expense-Tracker-.git
+cd spendsense
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+Create a .env file in the root directory:
+
+NEXT_PUBLIC_CLERK_FRONTEND_API=<your-clerk-frontend-api>
+CLERK_API_KEY=<your-clerk-backend-api>
+ARCJET_KEY=<your-arcjet-key>
+DATABASE_URL=<your-database-url>
+
+</details> <details> <summary><b>▶ Run the Dev Server</b></summary>
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Now open 👉 http://localhost:3000
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+</details>
 
-## Learn More
+📂 Project Structure
+SpendSense/
+│
+├─ app/                # Next.js App directory
+│   ├─ (main)/         # Main pages
+│   ├─ middleware.ts   # ArcJet + Clerk middleware
+│   └─ _components/    # Reusable components
+│
+├─ lib/                # Helper functions
+├─ prisma/             # Prisma schema & migrations
+├─ public/             # Static assets
+├─ components/         # React components
+├─ package.json
+└─ README.md
 
-To learn more about Next.js, take a look at the following resources:
+📖 Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+🔑 Login / Register with Clerk
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+💳 Add accounts & transactions
 
-## Deploy on Vercel
+📊 View AI-powered insights & reports
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+📧 Receive alerts via email
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+🚀 Deployment
+
+Push your project to GitHub
+
+Import into Vercel
+
+Set environment variables in Vercel dashboard
+
+Hit Deploy! 🎉
+
+🤝 Contributing
+
+🍴 Fork the repository
+
+🌿 Create your branch
+
+💾 Commit changes
+
+🚀 Push & Open PR
+
+🏷 About
+
+SpendSense – For anyone who wants to manage money smartly with AI.
