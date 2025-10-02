@@ -116,6 +116,8 @@ Hit Deploy! 🎉
 
 🚀 Push & Open PR
 
+
+
 🏷 About
 
 SpendSense – For anyone who wants to manage money smartly with AI.
