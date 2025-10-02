@@ -13,4 +13,6 @@ export const { GET, POST, PUT } = serve({
      generateMonthlyReports,
      checkBudgetAlerts,
   ],
+  baseUrl: process.env.APP_URL,
+
 });
