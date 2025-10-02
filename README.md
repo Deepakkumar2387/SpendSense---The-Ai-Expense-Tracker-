@@ -39,6 +39,15 @@ Track expenses, manage accounts, and gain AI-driven insights — all in one plac
 
 ---
 
+## ✨ App Preview
+
+![Alt text for image 1](assets/1.png)
+
+![Alt text for image 2](assets/2.png)
+
+![Alt text for image 3](assets/3.png)
+
+
 ## 🚀 Getting Started  
 
 <details>
@@ -125,6 +134,4 @@ Deployed on Railway: https://spendsense-the-ai-expense-tracker-production.up.rai
 SpendSense – For anyone who wants to manage money smartly with AI.
 
 
-![Alt text for image 1](assets/1.png)
-![Alt text for image 2](assets/2.png)
-![Alt text for image 3](assets/3.png)
+
