@@ -125,8 +125,6 @@ Deployed on Railway: https://spendsense-the-ai-expense-tracker-production.up.rai
 SpendSense – For anyone who wants to manage money smartly with AI.
 
 
-![SpendSense Screenshot](assets/1.png)
-
-![SpendSense Screenshot](assets/2.png)
-
-![SpendSense Screenshot](assets/3.png)
+![Alt text for image 1](assets/1.png)
+![Alt text for image 2](assets/2.png)
+![Alt text for image 3](assets/3.png)
