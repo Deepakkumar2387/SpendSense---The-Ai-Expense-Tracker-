@@ -1,4 +1,4 @@
-
+export const dynamic = "force-dynamic"; // ✅ Prevents prerender error
 import { getUserAccounts } from "@/app/actions/dashboard";
 import { getTransaction } from "@/app/actions/transaction";
 import { defaultCategories } from "@/data/categories";
