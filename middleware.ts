@@ -8,8 +8,7 @@ const isProtectedRoute = createRouteMatcher([
   "/transaction(.*)",
 ]);
 
-// Create Arcjet middleware
-// Create Arcjet middleware
+/// Create Arcjet middleware
 const aj = arcjet({
   key: process.env.ARCJET_KEY,
   // characteristics: ["userId"], // Track based on Clerk userId
