@@ -126,7 +126,7 @@ Hit Deploy! 🎉
 
 
 ## Deployment
-Deployed on Railway: https://spendsense-the-ai-expense-tracker-production.up.railway.app/
+Deployed on verrcel: https://spend-sense-the-ai-expense-tracker.vercel.app/
 
 
 🏷 About
