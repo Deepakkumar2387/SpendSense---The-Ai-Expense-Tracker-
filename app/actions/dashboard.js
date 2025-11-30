@@ -3,19 +3,38 @@
  import {db} from "@/lib/prisma"
 import { revalidatePath } from "next/cache";
 
+// const serializeTransaction = (obj) => {
+//     const serialized = {...obj} ;
+
+//     if(obj.balance){
+//         serialized.balance = obj.balance.toNumber();
+//     }
+
+
+//      if(obj.amount){
+//         serialized.amount = obj.amount.toNumber();
+//     }
+//      return serialized; 
+// }
+
+
+
 const serializeTransaction = (obj) => {
-    const serialized = {...obj} ;
+  const serialized = { ...obj };
 
-    if(obj.balance){
-        serialized.balance = obj.balance.toNumber();
-    }
+  if (obj.balance !== undefined && obj.balance !== null) {
+    serialized.balance =
+      typeof obj.balance === "number" ? obj.balance : obj.balance.toNumber();
+  }
 
+  if (obj.amount !== undefined && obj.amount !== null) {
+    serialized.amount =
+      typeof obj.amount === "number" ? obj.amount : obj.amount.toNumber();
+  }
 
-     if(obj.amount){
-        serialized.amount = obj.amount.toNumber();
-    }
-     return serialized; 
-}
+  return serialized;
+};
+
 
 
  export async function createAccount(data){
