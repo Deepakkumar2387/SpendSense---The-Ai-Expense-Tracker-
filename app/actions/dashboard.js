@@ -22,18 +22,25 @@ import { revalidatePath } from "next/cache";
 const serializeTransaction = (obj) => {
   const serialized = { ...obj };
 
+  // for balance
   if (obj.balance !== undefined && obj.balance !== null) {
     serialized.balance =
-      typeof obj.balance === "number" ? obj.balance : obj.balance.toNumber();
+      typeof obj.balance === "number"
+        ? obj.balance
+        : obj.balance.toNumber();
   }
 
+  // for amount
   if (obj.amount !== undefined && obj.amount !== null) {
     serialized.amount =
-      typeof obj.amount === "number" ? obj.amount : obj.amount.toNumber();
+      typeof obj.amount === "number"
+        ? obj.amount
+        : obj.amount.toNumber();
   }
 
   return serialized;
 };
+
 
 
 
